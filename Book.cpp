@@ -17,6 +17,8 @@ vector<Book> readBooksFromCSV(const string& filename) {
     }
 
     string line;
+    getline(file, line); // Skip header line
+
     while (getline(file, line)) {
         istringstream iss(line);
         string token;
