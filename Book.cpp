@@ -28,7 +28,7 @@ vector<Book> readBooksFromCSV(const string& filename) {
         }
 
         // Create Book instance from tokens
-        if (tokens.size() == 7) { // Ensure all fields are present
+        if (tokens.size() == 6) { // Ensure all fields are present
             int bookID = stoi(tokens[0]);
             string bookName = tokens[1];
             int pageCount = stoi(tokens[2]);
