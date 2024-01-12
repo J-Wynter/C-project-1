@@ -31,12 +31,13 @@ vector<Book> readBooksFromCSV(const string& filename) {
         if (tokens.size() == 7) { // Ensure all fields are present
             int bookID = stoi(tokens[0]);
             string bookName = tokens[1];
-            string authorLastName = tokens[2];
-            string authorFirstName = tokens[3];
-            string bookType = tokens[4];
+            int pageCount = stoi(tokens[2]);
+            string authorLastName = tokens[3];
+            string authorFirstName = tokens[4];
+            string bookType = tokens[5];
           
 
-            Book book(bookID, bookName, authorLastName, authorFirstName, bookType);
+            Book book(bookID, bookName, pageCount, authorLastName, authorFirstName, bookType);
             books.push_back(book);
         } else {
             cerr << "Invalid CSV line: " << line << endl;

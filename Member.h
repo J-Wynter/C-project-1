@@ -11,6 +11,7 @@
 
 using namespace std;
 
+class Book;
 
 class Member : public Person {
 private:

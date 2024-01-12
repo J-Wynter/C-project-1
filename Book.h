@@ -21,14 +21,15 @@ private:
     int bookID;
     string bookName;
     string authorLastName;
+    int pageCount;
     string authorFirstName;
     string bookType;
     int dueDate;
     Member borrower;
     
 public:
-Book(int bookID, string bookName, string authorLastName, string authorFirstName, string bookType)
-    : bookID(bookID), bookName(bookName), authorLastName(authorLastName), authorFirstName(authorFirstName), bookType(bookType)
+Book(int bookID, string bookName, int pageCount, string authorLastName, string authorFirstName, string bookType)
+    : bookID(bookID), bookName(bookName), pageCount(pageCount), authorLastName(authorLastName), authorFirstName(authorFirstName), bookType(bookType)
 {}
 
 
