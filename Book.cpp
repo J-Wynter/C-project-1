@@ -70,6 +70,22 @@ int main() {
 
     vector<Book> books = readBooksFromCSV(filename);
 
+    int inputBookID;
+    cout << "Enter Book ID to search: ";
+    cin >> inputBookID;
+
+    for (const auto& book : books) {
+        if (stoi(book.getbookID()) == inputBookID) {
+            cout << "Book Name: " << book.getbookName() << endl;
+            cout << "Author First Name: " << book.getAuthorFirstName() << endl;
+            cout << "Author Last Name: " << book.getAuthorLastName() << endl;
+            cout << "Page Count: " << book.getPageCount() << endl;
+            break;
+        }
+    }
+
+
+
     // Process the vector of books as needed
 
     return 0;

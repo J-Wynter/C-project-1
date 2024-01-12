@@ -52,10 +52,13 @@ Book(int bookID, string bookName, int pageCount, string authorLastName, string a
         return authorLastName;
 
     };
+   int getPageCount() {
+        return pageCount;
+    }
 
     int getDueDate(){
 
-    };
+    }
     
     void setDueDate(int dueDate){
 
