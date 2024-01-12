@@ -52,7 +52,7 @@ Book(int bookID, string bookName, int pageCount, string authorLastName, string a
         return authorLastName;
 
     };
-   int getPageCount() {
+   int getPageCount() const {
         return pageCount;
     }
 
