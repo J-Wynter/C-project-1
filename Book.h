@@ -34,20 +34,20 @@ Book(int bookID, string bookName, int pageCount, string authorLastName, string a
 
 
     
-    string getbookID(int bookID){
+    string getbookID(int bookID)const{
         string bookIDstring = to_string(bookID);
         return bookIDstring;
     };
     
-    string getbookName(){
+    string getbookName()const{
         return bookName;
     };
     
-    string getAuthorFirstName(){
+    string getAuthorFirstName()const{
         return authorFirstName;
     };
     
-    string getAuthorLastName(){
+    string getAuthorLastName() const{
 
         return authorLastName;
 
