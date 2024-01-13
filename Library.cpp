@@ -3,46 +3,61 @@
 #include <sstream>
 #include <vector>
 #include <string>
-#include "Book.h"
+#include "Book.cpp"
 
 
 using namespace std;
 
 
     int main() {
+    string filename;
+    cout << "Enter the CSV filename: ";
+    cin >> filename;
 
-    ifstream inputFile;
-    inputFile.open("/Users/joshuawynter/Desktop/C++/library_books.csv");
+    vector<Book> books = readBooksFromCSV(filename);
 
-     vector<Book> books;
+        // Creating a Person instance using the constructor
+    Person person1("John Doe", "123 Main St", "john.doe@example.com");
 
-    string line = "";
-    while (getline(inputFile, line)) {
-               
-        int bookId;
-        string bookName;
-        int pageCount;
-        string authorFirstName;
-        string authorLastName;
-        string BookType;
-        string tempString = "";
+    // Accessing and printing information using member functions
+    cout << "Person 1 Information:" << endl;
+    cout << "Name: " << person1.getName() << endl;
+    cout << "Address: " << person1.getAddress() << endl;
+    cout << "Email: " << person1.getEmail() << endl;
 
-        stringstream inputString(line);
-        
-        getline(inputString, tempString, ',');
-        bookId = atoi(tempString.c_str());
-                getline(inputString, bookName, ',');
-                        getline(inputString, tempString, ',');
-                        pageCount = atoi(tempString.c_str());
-                                getline(inputString, authorFirstName, ',');
-                                        getline(inputString, authorLastName, ',');
+    // Creating another Person instance and setting information using member functions
+    Person person2("", "", "");
+    person2.setName();
+    person2.setAddress();
+    person2.setEmail();
 
+    // Accessing and printing the updated information
+    cout << "\nPerson 2 Information:" << endl;
+    cout << "Name: " << person2.getName() << endl;
+    cout << "Address: " << person2.getAddress() << endl;
+    cout << "Email: " << person2.getEmail() << endl;
 
-Book book(bookId, bookName, authorFirstName, authorLastName, BookType);
-books.push_back(book);
+    return 0;
 
 
-        line = "";
+
+    int inputBookID;
+    cout << "Enter Book ID to search: ";
+    cin >> inputBookID;
+
+    for (const auto& book : books) {
+        if (stoi(book.getbookID()) == inputBookID) {
+            cout << "Book Name: " << book.getbookName() << endl;
+            cout << "Author First Name: " << book.getAuthorFirstName() << endl;
+            cout << "Author Last Name: " << book.getAuthorLastName() << endl;
+            cout << "Page Count: " << book.getPageCount() << endl;
+            break;
+        }
     }
-    //return 0;
-};
+
+
+
+    // Process the vector of books as needed
+
+    return 0;
+}

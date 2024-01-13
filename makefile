@@ -4,25 +4,22 @@ CXXFLAGS = -g -Wall -Wextra
 .PHONY: all
 all: library
 
-library: library.o Book.o Member.o Librarian.o Person.o
+library: library.o Book.o Members.o Librarian.o Person.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-library.o: library.cpp Book.h Member.h Librarian.h Person.h
+library.o: library.cpp Book.h Members.h Librarian.h Person.h
 	$(CXX) $(CXXFLAGS) -c $<
 
-Book.o: Book.cpp Book.h
+Book.o: Book.cpp Book.h Members.h
 	$(CXX) $(CXXFLAGS) -c $<
 
-Member.o: Member.cpp Member.h
+Members.o: Members.cpp Members.h Librarian.h
 	$(CXX) $(CXXFLAGS) -c $<
 
-Date.o: Date.cpp Date.h
+Librarian.o: Librarian.h Person.h Book.h
 	$(CXX) $(CXXFLAGS) -c $<
 
-Librarian.o: Librarian.cpp Librarian.h Person.h
-	$(CXX) $(CXXFLAGS) -c $<
-
-Person.o: Person.cpp Person.h
+Person.o: Person.h
 	$(CXX) $(CXXFLAGS) -c $<
 
 .PHONY: clean

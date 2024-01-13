@@ -8,15 +8,15 @@
 #include <vector>
 #include <string>
 #include <ctime>
-#include "Member.h"
-
+#include "Members.h"
+#include "Members.cpp"
 
 
 
 using namespace std;
 
 
-class Book: public Member {
+class Book: public Members {
 private: 
     int bookID;
     string bookName;
@@ -25,7 +25,7 @@ private:
     string authorFirstName;
     string bookType;
     int dueDate;
-    Member borrower;
+    string borrower;
     
 public:
 Book(int bookID, string bookName, int pageCount, string authorLastName, string authorFirstName, string bookType)
@@ -34,9 +34,8 @@ Book(int bookID, string bookName, int pageCount, string authorLastName, string a
 
 
     
-    string getbookID(int bookID)const{
-        string bookIDstring = to_string(bookID);
-        return bookIDstring;
+    string getbookID()const{
+        return to_string(bookID);
     };
     
     string getbookName()const{
@@ -68,7 +67,7 @@ Book(int bookID, string bookName, int pageCount, string authorLastName, string a
 
     };
     
-    void borrowBook(Member borrower, int dueDate){
+    void borrowBook(string borrower, int dueDate){
 
     };
 

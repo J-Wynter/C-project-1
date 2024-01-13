@@ -3,7 +3,6 @@
 #include <sstream>
 #include <vector>
 #include "Book.h"
-#include "Member.h"
 #ifndef LIBRARIAN_H
 #define LIBRARIAN_H
 
